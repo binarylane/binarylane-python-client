@@ -30,6 +30,8 @@ class Property:
         ValidationError: Raised when the default value fails to be converted to the expected type
     """
 
+    enable_lazy_imports = False
+
     name: str
     required: bool
     nullable: bool
@@ -143,8 +145,8 @@ class Property:
             default = None
 
         if default is not None:
-            return f"{self.python_name}: {self.get_type_string(quoted=True)} = {default}"
-        return f"{self.python_name}: {self.get_type_string(quoted=True)}"
+            return f"{self.python_name}: {self.get_type_string(quoted=Property.enable_lazy_imports)} = {default}"
+        return f"{self.python_name}: {self.get_type_string(quoted=Property.enable_lazy_imports)}"
 
     def to_docstring(self) -> str:
         """Returns property docstring"""

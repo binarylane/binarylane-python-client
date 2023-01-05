@@ -60,6 +60,10 @@ class ModelProperty(Property):
                 "from typing import cast",
             }
         )
+
+        if not Property.enable_lazy_imports:
+            imports.update({f"from {prefix}{self.self_import}"})
+
         return imports
 
     def get_lazy_imports(self, *, prefix: str) -> Set[str]:
@@ -69,6 +73,8 @@ class ModelProperty(Property):
             prefix: A prefix to put before any relative (local) module names. This should be the number of . to get
             back to the root of the generated client.
         """
+        if not Property.enable_lazy_imports:
+            return set()
         return {f"from {prefix}{self.self_import}"}
 
     def set_relative_imports(self, relative_imports: Set[str]) -> None:
