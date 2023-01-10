@@ -190,10 +190,10 @@ class ListProperty(Property, Generic[InnerProp]):
 
     # pylint: disable=unused-argument
     def get_base_type_string(self, *, quoted: bool = False) -> str:
-        return f"List[{self.inner_property.get_type_string(quoted=not self.inner_property.is_base_type)}]"
+        return f"List[{self.inner_property.get_type_string(quoted=not self.inner_property.is_base_type and Property.enable_lazy_imports)}]"
 
     def get_base_json_type_string(self, *, quoted: bool = False) -> str:
-        return f"List[{self.inner_property.get_type_string(json=True, quoted=not self.inner_property.is_base_type)}]"
+        return f"List[{self.inner_property.get_type_string(json=True, quoted=not self.inner_property.is_base_type and Property.enable_lazy_imports)}]"
 
     def get_instance_type_string(self) -> str:
         """Get a string representation of runtime type that should be used for `isinstance` checks"""
