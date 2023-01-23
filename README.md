@@ -1,3 +1,10 @@
+**This repository is a temporary fork of [openapi-python-client](https://github.com/openapi-generators/openapi-python-client),
+and is intended for development work on [binarylane-cli](https://github.com/binarylane/binarylane-cli) only.**
+
+This repository will be removed once the changes here are available in upstream.
+
+----
+
 ![Run Checks](https://github.com/openapi-generators/openapi-python-client/workflows/Run%20Checks/badge.svg)
 [![codecov](https://codecov.io/gh/openapi-generators/openapi-python-client/branch/main/graph/badge.svg)](https://codecov.io/gh/triaxtec/openapi-python-client)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
