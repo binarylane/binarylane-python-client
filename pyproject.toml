@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "binarylane-python-client"
-version = "0.13.2a0"
+version = "0.13.2a1"
 description = "Generate modern Python clients from OpenAPI"
 repository = "https://github.com/triaxtec/openapi-python-client"
 license = "MIT"

@@ -26,7 +26,7 @@ if sys.version_info.minor < 8:  # version did not exist before 3.8, need to use 
 else:
     from importlib.metadata import version  # type: ignore
 
-__version__ = version(__package__)
+__version__ = version('binarylane-python-client')
 
 
 class MetaType(str, Enum):
