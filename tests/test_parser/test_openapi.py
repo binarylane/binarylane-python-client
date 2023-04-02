@@ -126,6 +126,7 @@ class TestEndpoint:
         from openapi_python_client.parser.openapi import Endpoint
 
         return Endpoint(
+            data=oai.Operation(responses=dict()),
             path="path",
             method="method",
             description=None,
@@ -1077,6 +1078,7 @@ class TestEndpoint:
 
         add_parameters.assert_called_once_with(
             endpoint=Endpoint(
+                data=data,
                 path=path,
                 method=method,
                 description=data.description,
@@ -1128,6 +1130,7 @@ class TestEndpoint:
 
         add_parameters.assert_called_once_with(
             endpoint=Endpoint(
+                data=data,
                 path=path,
                 method=method,
                 description=data.description,
@@ -1180,6 +1183,7 @@ class TestEndpoint:
 
         add_parameters.assert_called_once_with(
             endpoint=Endpoint(
+                data=data,
                 path=path,
                 method=method,
                 description=data.description,

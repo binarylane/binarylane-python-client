@@ -21,6 +21,9 @@ from openapi_python_client.parser.properties import (
 from openapi_python_client.schema.openapi_schema_pydantic import Parameter
 from openapi_python_client.schema.parameter_location import ParameterLocation
 
+# Existing test cases expect lazy imports
+Property.enable_lazy_imports = True
+
 
 @pytest.fixture
 def model_property_factory() -> Callable[..., ModelProperty]:
