@@ -188,12 +188,15 @@ class ListProperty(Property, Generic[InnerProp]):
     inner_property: InnerProp
     template: ClassVar[str] = "list_property.py.jinja"
 
+    def _quoted(self) -> bool:
+        return not self.inner_property.is_base_type and Property.enable_lazy_imports
+
     # pylint: disable=unused-argument
     def get_base_type_string(self, *, quoted: bool = False) -> str:
-        return f"List[{self.inner_property.get_type_string(quoted=not self.inner_property.is_base_type and Property.enable_lazy_imports)}]"
+        return f"List[{self.inner_property.get_type_string(quoted=self._quoted())}]"
 
     def get_base_json_type_string(self, *, quoted: bool = False) -> str:
-        return f"List[{self.inner_property.get_type_string(json=True, quoted=not self.inner_property.is_base_type and Property.enable_lazy_imports)}]"
+        return f"List[{self.inner_property.get_type_string(json=True, quoted=self._quoted())}]"
 
     def get_instance_type_string(self) -> str:
         """Get a string representation of runtime type that should be used for `isinstance` checks"""
