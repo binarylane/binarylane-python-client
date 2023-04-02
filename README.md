@@ -3,6 +3,16 @@ and is intended for development work on [binarylane-cli](https://github.com/bina
 
 This repository will be removed once the changes here are available in upstream.
 
+It contains the following modifications:
+
+- New `data: Operation` attribute for `Endpoint` instances, allowing custom
+  templates to obtain additional information from pydantic `Operation` object
+- New `enable_lazy_imports: bool` attribute for `Property` class, allowing lazy
+  imports to be disabled
+- `Property` can obtain its `description` attribute from its schema, in
+  addition to the parameter itself
+- Fix `types.py` not having `UNSET` and `Unset` in its `__all__` declaration
+
 ----
 
 ![Run Checks](https://github.com/openapi-generators/openapi-python-client/workflows/Run%20Checks/badge.svg)
