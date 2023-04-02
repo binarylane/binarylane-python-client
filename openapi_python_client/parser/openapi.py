@@ -385,7 +385,7 @@ class Endpoint:
             # In OpenAPI specification both of a parameter, and its schema, may optionally have a description.
             # openapi-python-client only uses the schema description for the parameter, so if
             # the schema does not have a description we will supply the parameter's description instead.
-            if param.param_schema.description is None:
+            if isinstance(param.param_schema, oai.Schema) and param.param_schema.description is None:
                 param.param_schema.description = param.description
 
             prop, new_schemas = property_from_data(
