@@ -33,7 +33,7 @@ class OpenAPI(BaseModel):
     security: Optional[List[SecurityRequirement]] = None
     tags: Optional[List[Tag]] = None
     externalDocs: Optional[ExternalDocumentation] = None
-    openapi: 'Union[Literal["3.0.0"], Literal["3.0.1"], Literal["3.0.2"], Literal["3.0.3"]]'
+    openapi: 'Union[Literal["3.0.0"], Literal["3.0.1"], Literal["3.0.2"], Literal["3.0.3"], Literal["3.0.4"]]'
 
     class Config:  # pylint: disable=missing-class-docstring
         extra = Extra.allow
